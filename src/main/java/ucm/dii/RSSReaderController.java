@@ -49,7 +49,7 @@ public class RSSReaderController {
 	}   
 
 @RequestMapping("/rss/resumenensayo")
-	public String getSummary() throws IOException {		
+	public String getSummary1() throws IOException {		
 	     
      
 	return  "<b>hola</b>";
