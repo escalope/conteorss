@@ -46,7 +46,15 @@ public class RSSReaderController {
     	 count=count+inputLine.split("/item").length;
      in.close();	 
 	return ""+(count-1);
-	}    
+	}   
+
+@RequestMapping("/rss/resumenensayo")
+	public String getSummary() throws IOException {		
+	     
+     
+	return  "<b>hola</b>";
+	
+	}     
 	
 	@RequestMapping("/rss/resumen")
 	public String getSummary() throws IOException {		
