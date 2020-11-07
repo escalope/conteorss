@@ -26,6 +26,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.CategoryAxis;
+import org.jfree.chart.axis.CategoryLabelPositions;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.statistics.HistogramDataset;
@@ -113,14 +115,16 @@ public class RSSReaderController {
 	    }
 	    
 	    
-	    JFreeChart chart = ChartFactory.createBarChart(
+	     JFreeChart chart = ChartFactory.createBarChart(
 				 "Progreso ODS",
 	                "ODS", "#Acciones", dataset,
 	                PlotOrientation.VERTICAL,
-	                true,
+	                false,
 	                true,
 	                false);
 	    chart.setBackgroundPaint(Color.white);
+	     CategoryAxis domain = chart.getCategoryPlot().getDomainAxis();
+	     domain.setCategoryLabelPositions(CategoryLabelPositions.UP_45);
 	    BufferedImage img = chart.createBufferedImage(600, 300); 
 	    ByteArrayOutputStream baos = new ByteArrayOutputStream();
 	    ImageIO.write(img, "PNG", baos);
