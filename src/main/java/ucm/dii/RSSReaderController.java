@@ -62,14 +62,16 @@ public class RSSReaderController {
     	 sb.append(inputLine);
      in.close();	 
      String contenido=sb.toString();
+
+     String contenidoODS="";
+    for (int k=1;k<=17;k++){
+        contenidoODS=contenidoODS+"ODS"+k+":"+contenido.split("ODS"+k).length+"\n";
+    }
      
      
 	return  "Total acciones (algunas acciones ODS pueden solapar): "+contenido.split("/item").length+"\n"+
 	        "Relación de acciones con ODS:\n"+
-			"ODS7:"+contenido.split("ODS15").length+"\n"+
-			"ODS12:"+contenido.split("ODS12").length+"\n"+
-			"ODS11:"+contenido.split("ODS11").length+"\n"+
-			"ODS15:"+contenido.split("ODS15").length+"\n";
+            contenidoODS;
 	
 	}    
 
