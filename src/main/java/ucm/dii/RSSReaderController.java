@@ -65,7 +65,7 @@ public class RSSReaderController {
 
      String contenidoODS="";
     for (int k=1;k<=17;k++){
-        contenidoODS=contenidoODS+"ODS"+k+":"+contenido.split("ODS"+k).length+"\n";
+        contenidoODS=contenidoODS+"ODS"+k+":"+contenido.split("ODS"+k+"<").length+";";
     }
      
      
